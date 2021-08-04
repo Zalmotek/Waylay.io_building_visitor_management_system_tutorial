@@ -30,8 +30,8 @@ image0 = M5Img("res/access.png", x=221, y=29, parent=None)
 image1 = M5Img("res/waylay.png", x=110, y=205, parent=None)
 image2 = M5Img("res/fingerprint.png", x=34, y=29, parent=None)
 deb = M5Label('Text', x=207, y=132, color=0x000, font=FONT_MONT_14, parent=None)
-HttpStatus = M5Label('Text', x=34, y=215, color=0x000, font=FONT_MONT_14, parent=None)
-ps = M5Label('Text', x=238, y=215, color=0x000, font=FONT_MONT_14, parent=None)
+HttpStatus = M5Label('Status', x=34, y=215, color=0x000, font=FONT_MONT_14, parent=None)
+ps = M5Label('Waiting', x=238, y=215, color=0x000, font=FONT_MONT_14, parent=None)
 accStat = M5Label('Text', x=11, y=113, color=0x000, font=FONT_MONT_14, parent=None)
 read = M5Label('Text', x=11, y=138, color=0x000, font=FONT_MONT_14, parent=None)
 RF1 = M5Label('Text', x=238, y=113, color=0x000, font=FONT_MONT_14, parent=None)
@@ -54,7 +54,7 @@ def SendPOST():
   global status, DataMap, rfidValue, accValue, RFID, json_data, accessStatus, DoorStatus
   status = 'No Status'
   try:
-    req = urequests.request(method='POST', url='Fill-in-your-webscript-url',data=json_data, headers={'Content-Type':'application/json'})
+    req = urequests.request(method='POST', url='replace_with_your_webscript_address',data=json_data, headers={'Content-Type':'application/json'})
     ps.set_text_color(0x006600)
     wait(5)
     status = req.status_code
